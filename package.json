@@ -1,6 +1,6 @@
 {
   "name": "@hienpham512/angouleme-types",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
   "type": "module",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   "author": "hienpham512 <thi-hien.pham@epitech.eu>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc"
+    "build": "npx tsc --emitDeclarationOnly"
   },
   "exports": {
     ".": {
