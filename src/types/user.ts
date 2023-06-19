@@ -2,7 +2,7 @@ import { Book, PDF_content } from "./book";
 
 interface User {
   id: string;
-  firtName: string;
+  firstName: string;
   lastName: string;
   birthday: Date;
   role: Role;
@@ -15,26 +15,18 @@ interface User {
   createdAt: Date;
   updatedAt: Date;
   RatedBooks?: Book["id"][];
-		ReadBoooks?: Book["id"][];
+  ReadBoooks?: Book["id"][];
   card?: Book[];
-		onGoingBook?: OnGoingBook[];
+  onGoingBook?: OnGoingBook[];
 }
 
 interface OnGoingBook {
-	bookId: Book["id"];
-	pageOn: PDF_content["page"];
+  bookId: Book["id"];
+  pageOn: PDF_content["page"];
 }
 
+type Role = "ADMIN" | "SUPER_ADMIN" | "USER";
 
-export enum Role {
-  ADMIN = "ADMIN",
-  SUPER_ADMIN = "SUPER_ADMIN",
-  USER = "USER",
-}
+type Profession = "STUDENT" | "OTHERS";
 
-export enum Profession {
-  STUDENT = "STUDENT",
-  OTHER = "OTHER",
-}
-
-export type { User, OnGoingBook };
+export type { User, OnGoingBook, Role, Profession };
