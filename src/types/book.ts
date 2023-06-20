@@ -1,10 +1,10 @@
 import { User } from "./user";
 
 interface Book {
-	ageRange?: [number, number];
+	ageRange?: number[];
 	ageRestriction?: number;
 	author: string;
-	caterogy: Category[];
+	caterogies: Category[];
 	createdAt: Date;
 	createdBy: User["id"];
 	dataPublished: Date;
@@ -16,7 +16,15 @@ interface Book {
 	updatedAt: Date;
 	updatedBy: User["id"];
 	isReadBy: User["id"][];
+	covers: BookCover[];
 }
+
+interface BookCover {
+	image: string;
+	coverType: CoverType;
+}
+
+type CoverType = "FRONT" | "BACK" | "SPINE";
 
 type Category = "DRAMA" | "NOVEL" | "OTHER" | "POETRY" | "SCIENCE_FICTION" | "SHORT_STORY" | "TRAGEDY";
 interface PDF_content {
@@ -26,9 +34,12 @@ interface PDF_content {
 }
 
 interface Rating {
-	comment?: string;
+	comment: string;
 	rating: number;
 	userId: string;
+	firstName: string;
+	lastName: string;
+	avatar: string;
 }
 
 export type { Book, PDF_content, Rating, Category };

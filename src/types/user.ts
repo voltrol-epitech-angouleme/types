@@ -4,6 +4,7 @@ interface User {
   id: string;
   firstName: string;
   lastName: string;
+  gender: "male" | "female" | "other";
   birthday: Date;
   role: Role;
   profession: Profession;
@@ -14,9 +15,9 @@ interface User {
   avatar?: string;
   createdAt: Date;
   updatedAt: Date;
-  RatedBooks?: Book["id"][];
-  ReadBoooks?: Book["id"][];
-  card?: Book[];
+  ratedBooks?: Book["id"][];
+  readBoooks?: Book["id"][];
+  card?: Book["id"][];
   onGoingBook?: OnGoingBook[];
 }
 
